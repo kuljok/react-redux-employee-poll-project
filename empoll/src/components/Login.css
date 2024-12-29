@@ -5,7 +5,6 @@
   padding: 40px 80px;
   gap: 40px;
 
-  position: absolute;
   width: 410px;
   height: 557.66px;
   left: calc(50% - 410px / 2);
@@ -14,4 +13,55 @@
   background: rgba(88, 130, 193, 0.28);
   backdrop-filter: blur(8.89323px);
   border-radius: 28.4583px;
+}
+
+.Login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.Login-form section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Login-form .title {
+  margin-bottom: 20px;
+}
+
+.Login-form input[type="email"],
+.Login-form input[type="password"] {
+  background: #ffffff;
+  border: 0.711458px solid #bcbec0;
+  border-radius: 5px;
+  width: 250px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 10px;
+}
+
+.Login-form input::placeholder {
+  color: var(--color-light-gray);
+}
+
+.Login-form button {
+  width: 250px;
+  height: 40px;
+  background-color: var(--color-blue-dark);
+  color: var(--color-white);
+  font-style: normal;
+  font-family: "Gilroy-Bold";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 20px;
+  border-radius: 7.11458px;
+  border-width: 0;
+  margin-top: 50px;
 }
