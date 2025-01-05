@@ -33,6 +33,9 @@ const Login = ({ dispatch, users }) => {
         <section className="title">
           <h3>Login</h3>
         </section>
+        <div className="error-message">
+          Invalid username or password. Please try again.
+        </div>
         <section>
           <label htmlFor="username">Username</label>
           <input

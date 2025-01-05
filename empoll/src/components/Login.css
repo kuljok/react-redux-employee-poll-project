@@ -9,8 +9,7 @@
   height: 557.66px;
   left: calc(50% - 410px / 2);
   top: calc(50% - 557.66px / 2);
-
-  background: rgba(88, 130, 193, 0.28);
+  background: var(--color-blue-transparent);
   backdrop-filter: blur(8.89323px);
   border-radius: 28.4583px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -22,6 +21,14 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+}
+
+.Login-form .error-message {
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: var(--color-red-transparent);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .Login-form section {
