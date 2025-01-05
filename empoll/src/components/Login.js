@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
+import { setAuthedUser } from "../actions/authedUser";
 import "./Login.css";
 
 const Login = ({ dispatch, users }) => {
@@ -28,13 +29,14 @@ const Login = ({ dispatch, users }) => {
     e.preventDefault();
 
     const foundUser = Object.keys(users).find((id) => id === username);
-    if (!foundUser) {
+    if (!foundUser || users[foundUser].password !== password) {
       setUsername("");
       setPassword("");
       setInvalidLogin(true);
       userNameRef.current.focus();
       return;
     }
+    dispatch(setAuthedUser(foundUser));
   };
 
   return (

@@ -22,6 +22,9 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = ({ users }) => ({ loading: users === null });
+const mapStateToProps = ({ users, authedUser }) => ({
+  loading: users === null,
+  authedUser: authedUser,
+});
 
 export default connect(mapStateToProps)(App);
