@@ -8,6 +8,8 @@ const Login = ({ dispatch, users }) => {
   const [password, setPassword] = useState("");
   const [invalidLogin, setInvalidLogin] = useState(false);
   const userNameRef = useRef(null);
+  const loginRef = useRef(null);
+  const [hidden, setHidden] = useState(false);
 
   const handleUsernameChange = (e) => {
     const text = e.target.value;
@@ -36,11 +38,16 @@ const Login = ({ dispatch, users }) => {
       userNameRef.current.focus();
       return;
     }
-    dispatch(setAuthedUser(foundUser));
+
+    setHidden(true);
+
+    setTimeout(() => {
+      dispatch(setAuthedUser(foundUser));
+    }, 300);
   };
 
   return (
-    <div className="Login">
+    <div className={`Login ${hidden ? "hide" : ""}`} ref={loginRef}>
       <picture>Your Logo</picture>
       <form
         className={`Login-form ${invalidLogin ? "error" : ""}`}
