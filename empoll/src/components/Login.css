@@ -13,6 +13,7 @@
   background: rgba(88, 130, 193, 0.28);
   backdrop-filter: blur(8.89323px);
   border-radius: 28.4583px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .Login-form {
@@ -33,7 +34,7 @@
   margin-bottom: 20px;
 }
 
-.Login-form input[type="email"],
+.Login-form input[type="text"],
 .Login-form input[type="password"] {
   background: #ffffff;
   border: 0.711458px solid #bcbec0;
@@ -45,6 +46,10 @@
   align-items: center;
   padding: 16px;
   gap: 10px;
+}
+
+.Login-form input:focus {
+  outline: none;
 }
 
 .Login-form input::placeholder {

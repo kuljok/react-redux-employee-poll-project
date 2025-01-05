@@ -1,8 +1,29 @@
+import { useState } from "react";
+import { connect, useSelector } from "react-redux";
 import "./Login.css";
 
-const Login = (props) => {
+const Login = ({ dispatch, users }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleUsernameChange = (e) => {
+    const text = e.target.value;
+    setUsername(text);
+  };
+
+  const handlePasswordChange = (e) => {
+    const text = e.target.value;
+    setPassword(text);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const foundUser = Object.keys(users).find((id) => id === username);
+    if (!foundUser) {
+      alert("User not found");
+      return;
+    }
   };
 
   return (
@@ -13,12 +34,14 @@ const Login = (props) => {
           <h3>Login</h3>
         </section>
         <section>
-          <label htmlFor="username">Email</label>
+          <label htmlFor="username">Username</label>
           <input
-            type="email"
+            type="text"
             id="username"
-            placeholder="username@gmail.com"
+            placeholder="username"
             name="username"
+            onChange={handleUsernameChange}
+            value={username}
           />
         </section>
         <section>
@@ -28,6 +51,8 @@ const Login = (props) => {
             id="password"
             name="password"
             placeholder="Password"
+            value={password}
+            onChange={handlePasswordChange}
           />
         </section>
         <button type="submit">Sign In</button>
@@ -36,4 +61,10 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+  };
+};
+
+export default connect(mapStateToProps)(Login);
