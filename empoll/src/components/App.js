@@ -1,15 +1,27 @@
-import React, { Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
+import Homepage from "./Homepage";
+import { loadData } from "../actions/shared";
+import { connect } from "react-redux";
 
-function App() {
+const App = (props) => {
+  useEffect(() => {
+    loadData(props.dispatch);
+  });
   return (
     <Fragment>
-      <Routes>
-        <Route path="/" element={<Login />} />
-      </Routes>
+      {props.authedUser == null ? (
+        !props.loading && <Login />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+      )}
     </Fragment>
   );
-}
+};
 
-export default App;
+const mapStateToProps = ({ users }) => ({ loading: users === null });
+
+export default connect(mapStateToProps)(App);
