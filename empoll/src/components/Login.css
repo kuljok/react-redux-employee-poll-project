@@ -29,16 +29,43 @@
   background-color: var(--color-red-transparent);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  opacity: 0; /* Hidden by default */
+  max-height: 0;
+  transform: translateY(-20px); /* Positioned slightly above */
+  transition:
+    max-height 0.2s ease,
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  margin-left: -10px;
+  margin-right: -10px;
+  width: calc(100% + 20px);
+}
+
+.Login-form.error .error-message {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Moves to its normal position */
+  animation: bounce 0.6s ease-in-out;
+  max-height: 50px;
+}
+
+/* Bounce animation for attention */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .Login-form section {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.Login-form .title {
-  margin-bottom: 20px;
 }
 
 .Login-form input[type="text"],
