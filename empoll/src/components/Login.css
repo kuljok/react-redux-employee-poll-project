@@ -93,7 +93,7 @@
 .Login-form button {
   width: 250px;
   height: 40px;
-  background-color: var(--color-blue-dark);
+  background-color: var(--color-blue-dark2);
   color: var(--color-white);
   font-style: normal;
   font-family: "Gilroy-Bold";
@@ -103,4 +103,18 @@
   border-radius: 7.11458px;
   border-width: 0;
   margin-top: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.Login-form button:hover {
+  background-color: var(--color-blue-dark);
+}
+
+.Login-form button:focus {
+  background-color: var(--color-blue-dark);
+  outline: none;
+}
+
+.Login-form.error button {
+  background-color: var(--color-red-transparent);
 }
