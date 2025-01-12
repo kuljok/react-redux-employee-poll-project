@@ -2,8 +2,50 @@
   display: flex;
   gap: 1rem;
   margin-right: -60px;
+  font-size: 1.3rem;
 }
 
 .UserMenu > *:last-child {
   align-self: flex-end;
+}
+
+.UserMenu .username {
+  display: inline-flex;
+  align-items: center;
+}
+
+.UserMenu .username i.bi-person,
+.UserMenu .username span {
+  transition: transform 0.3s ease;
+}
+
+.UserMenu .username i {
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+
+.UserMenu .username i.bi-x-lg {
+  margin-left: 5px;
+  background-color: rgba(250, 250, 250, 0.1);
+  backdrop-filter: blur(3px);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 250, 250, 0.3);
+  top: 0;
+
+  opacity: 0;
+  transform: translateX(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.UserMenu .username:hover i.bi-x-lg {
+  opacity: 1;
+  transform: translateX(0);
+}
+.UserMenu .username:hover i.bi-person,
+.UserMenu .username:hover span {
+  transform: translateX(-10px);
 }

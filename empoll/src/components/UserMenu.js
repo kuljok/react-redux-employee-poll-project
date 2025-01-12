@@ -4,7 +4,11 @@ import "./UserMenu.css";
 const UserMenu = ({ authedUser }) => {
   return (
     <div className="UserMenu">
-      <div>{authedUser.id}</div>
+      <div className="username">
+        <i className="bi bi-person"></i>
+        <span>{authedUser.id}</span>
+        <i className="bi bi-x-lg"></i>
+      </div>
     </div>
   );
 };

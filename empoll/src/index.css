@@ -4,6 +4,7 @@
   --color-blue-light: #0085ff;
   --color-blue-transparent: #5882c147;
   --color-red-transparent: #c23c34d0;
+  --color-red: #c23c34;
   --gradient-blue: radial-gradient(
     circle,
     var(--color-blue-light),
