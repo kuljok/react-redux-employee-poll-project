@@ -1,7 +1,13 @@
 import { connect } from "react-redux";
+import { Fragment } from "react";
+import Header from "./Header";
 
 const Homepage = (props) => {
-  return <h1>HOMEPAGE</h1>;
+  return (
+    <Fragment>
+      <Header></Header>
+    </Fragment>
+  );
 };
 
 export default connect()(Homepage);

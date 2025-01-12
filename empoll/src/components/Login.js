@@ -30,8 +30,8 @@ const Login = ({ dispatch, users }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const foundUser = Object.keys(users).find((id) => id === username);
-    if (!foundUser || users[foundUser].password !== password) {
+    const foundId = Object.keys(users).find((id) => id === username);
+    if (!foundId || users[foundId].password !== password) {
       setUsername("");
       setPassword("");
       setInvalidLogin(true);
@@ -42,7 +42,7 @@ const Login = ({ dispatch, users }) => {
     setHidden(true);
 
     setTimeout(() => {
-      dispatch(setAuthedUser(foundUser));
+      dispatch(setAuthedUser(users[foundId]));
     }, 300);
   };
 
@@ -90,9 +90,9 @@ const Login = ({ dispatch, users }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ users }) => {
   return {
-    users: state.users,
+    users: users,
   };
 };
 

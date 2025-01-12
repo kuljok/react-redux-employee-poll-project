@@ -1,0 +1,9 @@
+.UserMenu {
+  display: flex;
+  gap: 1rem;
+  margin-right: -60px;
+}
+
+.UserMenu > *:last-child {
+  align-self: flex-end;
+}
