@@ -1,11 +1,15 @@
 import { connect } from "react-redux";
 import { Fragment } from "react";
 import Header from "./Header";
+import Polls from "./Polls";
 
 const Homepage = (props) => {
   return (
     <Fragment>
-      <Header></Header>
+      <Header />
+      <main>
+        <Polls />
+      </main>
     </Fragment>
   );
 };

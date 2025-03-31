@@ -9,4 +9,5 @@ header.Header {
   z-index: 99;
   display: flex;
   justify-content: space-between;
+  height: 60px;
 }
