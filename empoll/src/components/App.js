@@ -16,6 +16,8 @@ const App = (props) => {
       ) : (
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/unanswered" element={<Homepage />} />
+          <Route path="/answered" element={<Homepage />} />
         </Routes>
       )}
     </Fragment>
